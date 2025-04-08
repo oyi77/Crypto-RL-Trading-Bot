@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading Assistant Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">Crypto Trading Assistant Dashboard</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Performance Metrics -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Performance Metrics</h2>
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <span>Balance:</span>
+                        <span id="balance" class="font-mono">0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Equity:</span>
+                        <span id="equity" class="font-mono">0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Drawdown:</span>
+                        <span id="drawdown" class="font-mono">0.00%</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Win Rate:</span>
+                        <span id="winRate" class="font-mono">0.00%</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Trade Count:</span>
+                        <span id="tradeCount" class="font-mono">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RL Metrics -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">RL Metrics</h2>
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <span>Epsilon:</span>
+                        <span id="epsilon" class="font-mono">0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Buffer Size:</span>
+                        <span id="bufferSize" class="font-mono">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Agent Count:</span>
+                        <span id="agentCount" class="font-mono">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Indicators -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Technical Indicators</h2>
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <span>RSI:</span>
+                        <span id="rsi" class="font-mono">0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>MACD:</span>
+                        <span id="macd" class="font-mono">0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>PPO:</span>
+                        <span id="ppo" class="font-mono">0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>ATR:</span>
+                        <span id="atr" class="font-mono">0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Price Chart</h2>
+                <canvas id="priceChart"></canvas>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Indicator Chart</h2>
+                <canvas id="indicatorChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Trading Signals -->
+        <div class="bg-white p-6 rounded-lg shadow mt-6">
+            <h2 class="text-xl font-semibold mb-4">Recent Trading Signals</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2">Time</th>
+                            <th class="px-4 py-2">Action</th>
+                            <th class="px-4 py-2">Confidence</th>
+                            <th class="px-4 py-2">Size</th>
+                            <th class="px-4 py-2">Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody id="signalsTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
