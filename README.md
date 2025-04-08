@@ -1,4 +1,4 @@
-# Crypto Trading Assistant
+# Crypto-RL-Trading-Bot
 
 An advanced crypto trading bot that uses Reinforcement Learning (PPO) to make trading decisions. The bot features real-time market analysis, risk management, and automatic learning capabilities.
 
@@ -22,7 +22,7 @@ An advanced crypto trading bot that uses Reinforcement Learning (PPO) to make tr
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/crypto-trading-assistant.git
+git clone https://github.com/oyi77/Crypto-RL-Trading-Bot.git
 cd crypto-trading-assistant
 ```
 
@@ -353,4 +353,3 @@ Contributions are welcome! Please:
 ## License
 
 MIT License - see LICENSE file for details
-# Crypto-RL-Trading-Bot
